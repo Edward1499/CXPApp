@@ -1,0 +1,45 @@
+﻿@{
+}
+
+<div class="container-fluid">
+    <h2>Agregar Proveedor</h2>
+    <form asp-controller="Provider" asp-action="Add" method="post">
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Name" class="form-label">Nombre</label>
+                <input name="Name" type="text" class="form-control" id="description">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="PersonType" class="form-label">Tipo Persona</label>
+                <select name="PersonType" class="form-select form-select-sm" aria-label=".form-select-sm example" id="personType">
+                    <option value="Fisica">Fisica</option>
+                    <option value="Juridica">Juridica</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="PersonalId" class="form-label">Numero Documento</label>
+                <input name="PersonalId" type="text" class="form-control" id="personalId">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="Balance" class="form-label">Balance</label>
+                <input name="Balance" type="number" class="form-control" id="balance">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="IsActive" class="form-label">Estado</label>
+                <select name="IsActive" class="form-select form-select-sm" aria-label=".form-select-sm example" id="isActive">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model PaymentConcept
+@{
+}
+
+<div class="container-fluid">
+    <h2>Modificar Concepto De Pago</h2>
+    <form asp-controller="PaymentConcept" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Description" class="form-label">Descripcion</label>
+                <input asp-for="Description" name="Description" type="text" class="form-control" id="description">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="IsActive" class="form-label">Estado</label>
+                <select asp-for="IsActive" name="IsActive" class="form-select form-select-sm" aria-label=".form-select-sm example" id="isActive">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

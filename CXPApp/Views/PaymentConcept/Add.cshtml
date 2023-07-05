@@ -1,0 +1,37 @@
+﻿@model PaymentConcept  
+    
+@*@Html.Editor("StudentName") <br />*@
+@*@Html.ValidationMessageFor(m => m.Description, "Please enter student name.", new { @class = "text-danger" })*@
+
+@{
+}
+
+<div class="container-fluid">
+    <h2>Agregar Concepto De Pago</h2>
+    @if (@TempData["PaymentConcept"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["PaymentConcept"]
+        </div>
+    }
+    <form asp-controller="PaymentConcept" asp-action="Add" method="post">
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Description" class="form-label">Descripcion</label>
+                <input name="Description" type="text" class="form-control" id="description">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="IsActive" class="form-label">Estado</label>
+                <select name="IsActive" class="form-select form-select-sm" aria-label=".form-select-sm example" id="isActive">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

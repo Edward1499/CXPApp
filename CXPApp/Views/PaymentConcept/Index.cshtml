@@ -1,0 +1,43 @@
+﻿@model List<PaymentConcept>
+@{
+    ViewData["Title"] = "Concepto De Pagos";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Concepto De Pagos</h2>
+        <a id="add" class="btn btn-primary" asp-controller="PaymentConcept" asp-action="Add">Agregar</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var element in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => element.Description)</td>
+                    <td>
+                        
+                        @if (element.IsActive)
+                        {
+                            <span>Activo</span>
+                        } 
+                        else 
+                        {
+                            <span>Inactivo</span>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-success" id="edit" asp-controller="PaymentConcept" asp-action="EditView" asp-route-id="@element.Id">Editar</a>
+                        <a class="btn btn-danger" id="delete" asp-controller="PaymentConcept" asp-action="Delete" asp-route-id="@element.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
