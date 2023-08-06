@@ -2914,19 +2914,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Edward Mercedes\\.nuget\\packages\\": {}
+    "C:\\Users\\braul\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
+      "projectUniqueName": "C:\\Users\\braul\\Source\\Repos\\CXPApp\\CXPApp\\CXPApp.csproj",
       "projectName": "CXPApp",
-      "projectPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
-      "packagesPath": "C:\\Users\\Edward Mercedes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\obj\\",
+      "projectPath": "C:\\Users\\braul\\Source\\Repos\\CXPApp\\CXPApp\\CXPApp.csproj",
+      "packagesPath": "C:\\Users\\braul\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\braul\\Source\\Repos\\CXPApp\\CXPApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Edward Mercedes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\braul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2934,6 +2939,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2996,7 +3002,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
