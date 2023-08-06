@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj": {}
+    "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj": {
+    "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
+        "projectUniqueName": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj",
         "projectName": "CXPApp",
-        "projectPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
-        "packagesPath": "C:\\Users\\Edward Mercedes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\obj\\",
+        "projectPath": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj",
+        "packagesPath": "C:\\Users\\josue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edward Mercedes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,27 +43,27 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
+              "version": "[8.0.0-preview.6.23329.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
+              "version": "[8.0.0-preview.6.23329.4, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
+              "version": "[8.0.0-preview.6.23329.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
+              "version": "[8.0.0-preview.6.23329.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
+              "version": "[8.0.0-preview.6.23329.4, )"
             }
           },
           "imports": [
@@ -84,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
