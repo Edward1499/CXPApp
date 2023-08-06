@@ -20,7 +20,7 @@ namespace CXPApp.Controllers
         {
             return View();
         }
-        //Braulio del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 24 A LA 35
+        //Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 24 A LA 35 y adaptarla a lo que se necesite
         [HttpGet]
         [Route("Provider/{parametro}")]
         public IActionResult Search(string parametro)
