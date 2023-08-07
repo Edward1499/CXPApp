@@ -16,22 +16,34 @@ namespace CXPApp.Controllers
             return View(dbContext.Providers.OrderByDescending(x => x.Id).ToList());
         }
 
+        [HttpGet]
+        [Route("Provider/Add")]
         public IActionResult Add()
         {
             return View();
         }
+
         //Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 24 A LA 35 y adaptarla a lo que se necesite
         [HttpGet]
         [Route("Provider/{parametro}")]
         public IActionResult Search(string parametro)
         {
-            return View("Index", dbContext.Providers.Where(x => (x.Id.ToString() == parametro
-            || x.PersonalId == parametro
-            || x.Name.ToLower().Contains(parametro.ToLower())
-            || x.PersonType.ToLower().Contains(parametro.ToLower())
-            || x.Balance.ToString() == parametro
-            || (x.IsActive && (parametro.ToLower() == "activo"))
-            || (!x.IsActive && (parametro.ToLower() == "inactivo")))).OrderByDescending(x => x.Id).ToList());
+            if (parametro == "Search")
+            {
+                return RedirectToAction("Index");
+            }
+
+            else
+            {
+                return View("Index", dbContext.Providers.Where(x => (x.Id.ToString() == parametro
+                    || x.PersonalId == parametro
+                    || x.Name.ToLower().Contains(parametro.ToLower())
+                    || x.PersonType.ToLower().Contains(parametro.ToLower())
+                    || x.Balance.ToString() == parametro
+                    || (x.IsActive && (parametro.ToLower() == "activo"))
+                    || (!x.IsActive && (parametro.ToLower() == "inactivo")))).OrderByDescending(x => x.Id).ToList());
+            }
+            
         }
 
         [HttpGet]
