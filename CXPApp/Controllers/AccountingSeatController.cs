@@ -1,5 +1,7 @@
 ﻿using CXPApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
+using System.Net.Http;
 
 namespace CXPApp.Controllers
 {
@@ -29,21 +31,34 @@ namespace CXPApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(AccountingSeat accountingSeat)
+        public async Task<IActionResult> AddAsync(AccountingSeat accountingSeat)
         {
+            
+            using (var client = new HttpClient())
+            {
+                var url = new Uri("http://129.80.203.120:5000/post-accounting-entries");
+                var requestData = new AccountingSeatWebService
+                {
+                    descripcion = accountingSeat.Description,
+                    monto = accountingSeat.SeatAmount,
+                    auxiliar = 6,
+                    cuentaCR = 81,
+                    cuentaDB = 81
+                };
+                var response = await client.PostAsJsonAsync(url, requestData);
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Error al guardar asiento contable");
 
-            //if (!ModelState.IsValid)
-            //{
-            //    TempData["AccountingSeat"] = "Formulario invalido, por favor revisar los campos!";
-            //    return View();
-            //}
+                var data = await response.Content.ReadFromJsonAsync<AccountingSeat>();
+                
+            }
 
             int ultimovalor = dbContext.AccountingSeat.OrderByDescending(x => x.Id)
                 .Select(x => x.SeatId).FirstOrDefault();
 
             accountingSeat.SeatId = ultimovalor + 1;
 
-            
+
 
             dbContext.Add(accountingSeat);
             dbContext.SaveChanges();

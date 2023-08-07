@@ -33,14 +33,27 @@ namespace CXPApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(DocumentEntry documentEntry)
+        public async Task<IActionResult> AddAsync(DocumentEntry documentEntry)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    TempData["DocumentEntry"] = "Formulario invalido, por favor revisar los campos!";
-            //    return View();
-            //}
-            
+            using (var client = new HttpClient())
+            {
+                var url = new Uri("http://129.80.203.120:5000/post-accounting-entries");
+                var requestData = new DocumentEntryWebService
+                {
+                    descripcion = documentEntry.DocumentNumber,
+                    monto = documentEntry.amount,
+                    auxiliar = 6,
+                    cuentaCR = 81,
+                    cuentaDB = 81
+                };
+                var response = await client.PostAsJsonAsync(url, requestData);
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Error al guardar asiento contable");
+
+                var data = await response.Content.ReadFromJsonAsync<DocumentEntry>();
+
+            }
+
             dbContext.Add(documentEntry);
             dbContext.SaveChanges();
 
