@@ -7,6 +7,9 @@
     <div class="d-flex justify-content-between mb-3">
         <h2>Concepto De Pagos</h2>
         <a id="add" class="btn btn-primary" asp-controller="PaymentConcept" asp-action="Add">Agregar</a>
+        <!-- Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 12 A LA 13-->
+        <a id="searchButton" class="btn btn-primary" asp-controller="Provider" asp-action="Search">Buscar</a>
+        <input name="parametro" type="text" class="form-control" id="parametro" onchange="editSearch(this.value)">
     </div>
     <table class="table table-striped">
         <thead>
@@ -40,4 +43,10 @@
             }
         </tbody>
     </table>
+    <!-- Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 57 A LA 61-->
+    <script>
+        function editSearch(value) {
+            document.getElementById("searchButton").href = "/PaymentConcept/" + value;
+        }
+    </script>
 </div>

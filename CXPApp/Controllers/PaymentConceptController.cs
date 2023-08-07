@@ -22,6 +22,17 @@ namespace CXPApp.Controllers
             return View();
         }
 
+        //Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 24 A LA 35 y adaptarla a lo que se necesite
+        [HttpGet]
+        [Route("PaymentConcept/{parametro}")]
+        public IActionResult Search(string parametro)
+        {
+            return View("Index", dbContext.PaymentConcepts.Where(x => (x.Id.ToString() == parametro
+            || x.Description.ToLower().Contains(parametro.ToLower())
+            || (x.IsActive && (parametro.ToLower() == "activo"))
+            || (!x.IsActive && (parametro.ToLower() == "inactivo")))).OrderByDescending(x => x.Id).ToList());
+        }
+
         [HttpGet]
         [Route("PaymentConcept/EditView/{id:int}")]
         public IActionResult EditView(int id)
