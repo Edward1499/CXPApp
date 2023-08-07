@@ -1,0 +1,70 @@
+﻿@model AccountingSeat
+@{
+}
+
+<div class="container-fluid">
+    <h2>Modificar Asiento</h2>
+    <form asp-controller="AccountingSeat" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="SeatId" />
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Description" class="form-label">Descripcion</label>
+                <input asp-for="Description" name="Description" type="text" class="form-control" id="Description">
+            </div>
+
+            <div class="col-6 mb-3">
+                <label for="IdInventoryType" class="form-label">Id Tipo Inv.</label>
+                <input asp-for="IdInventoryType" name="IdInventoryType" type="text" class="form-control" id="idInventoryType">
+            </div>
+
+            
+        </div>
+
+        <div class="row">
+
+            <div class="col-6 mb-3">
+                <label for="AccountingAccount" class="form-label">Cuenta cont.</label>
+                <input asp-for="AccountingAccount" name="AccountingAccount" type="text" class="form-control" id="accountingAccount">
+            </div>
+
+            <div class="col-6 mb-3">
+                <label for="MovementType" class="form-label">Proveedor</label>
+                <select asp-for="MovementType" name="MovementType" class="form-select form-select-sm" aria-label=".form-select-sm example" id="movementType">
+                    <option value="DB">DB</option>
+                    <option value="CR">CR</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label asp-for="SeatDate" class="control-label">Fecha Asiento</label>
+                <input asp-for="SeatDate" class="form-control" />
+                <span asp-validation-for="SeatDate" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-6 mb-3">
+                <label for="SeatAmount" class="form-label">Fecha de Registro</label>
+                <input asp-for="SeatAmount" name="SeatAmount" type="text" class="form-control" id="seatAmount">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="IsActive" class="form-label">Estado</label>
+                <select asp-for="IsActive" name="IsActive" class="form-select form-select-sm" aria-label=".form-select-sm example" id="isActive">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
