@@ -22,11 +22,11 @@ namespace CXPApp.Controllers
         {
             return View();
         }
-
+        
         //Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 24 A LA 35 y adaptarla a lo que se necesite
         [HttpGet]
         [Route("Provider/{parametro}")]
-        public IActionResult Search(string parametro)
+        public IActionResult Search(string parametro = null)
         {
             if (parametro == "Search")
             {
