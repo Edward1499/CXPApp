@@ -67,5 +67,13 @@
                 <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
             </div>
         </div>
+
+        <script>
+            var error = '@TempData["err"]';
+            if (error) {
+                alert(error);
+            }
+        </script>
+
     </form>
 </div>

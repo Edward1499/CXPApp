@@ -35,29 +35,39 @@ namespace CXPApp.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsync(DocumentEntry documentEntry)
         {
-            using (var client = new HttpClient())
+            if (documentEntry.amount > 0 && !string.IsNullOrEmpty(documentEntry.DocumentNumber))
             {
-                var url = new Uri("http://129.80.203.120:5000/post-accounting-entries");
-                var requestData = new WebServiceDto
+                using (var client = new HttpClient())
                 {
-                    descripcion = documentEntry.InvoiceNumber,
-                    monto = documentEntry.amount,
-                    auxiliar = 6,
-                    cuentaCR = 81,
-                    cuentaDB = 81
-                };
-                var response = await client.PostAsJsonAsync(url, requestData);
-                if (!response.IsSuccessStatusCode)
-                    throw new Exception("Error al guardar asiento contable");
+                    var url = new Uri("http://129.80.203.120:5000/post-accounting-entries");
+                    var requestData = new WebServiceDto
+                    {
+                        descripcion = documentEntry.InvoiceNumber,
+                        monto = documentEntry.amount,
+                        auxiliar = 6,
+                        cuentaCR = 81,
+                        cuentaDB = 81
+                    };
+                    var response = await client.PostAsJsonAsync(url, requestData);
+                    if (!response.IsSuccessStatusCode)
+                        throw new Exception("Error al guardar asiento contable");
 
-                var data = await response.Content.ReadFromJsonAsync<DocumentEntry>();
+                    var data = await response.Content.ReadFromJsonAsync<DocumentEntry>();
 
+                }
+                dbContext.Add(documentEntry);
+                dbContext.SaveChanges();
+
+                return RedirectToAction("Index");
             }
 
-            dbContext.Add(documentEntry);
-            dbContext.SaveChanges();
+            else
+            {
+                TempData["err"] = "Revisar campos";
+                return RedirectToAction("Add");
+            }
 
-            return RedirectToAction("Index");
+            
         }
 
         [HttpPost]
