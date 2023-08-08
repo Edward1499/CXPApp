@@ -19,5 +19,6 @@ namespace CXPApp
 
         public DbSet<PaymentConcept> PaymentConcepts { get; set; }
         public DbSet<Provider> Providers { get; set; }
+        public DbSet<DocumentEntry> DocumentEntry { get; set; }
     }
 }

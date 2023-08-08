@@ -638,6 +638,19 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -2006,6 +2019,36 @@
         "mono.texttemplating.nuspec"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -2910,23 +2953,24 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.Relational >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.5.23280.1",
-      "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.5.23280.1"
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.5.23280.1",
+      "Newtonsoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Edward Mercedes\\.nuget\\packages\\": {}
+    "C:\\Users\\josue\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
+      "projectUniqueName": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj",
       "projectName": "CXPApp",
-      "projectPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\CXPApp.csproj",
-      "packagesPath": "C:\\Users\\Edward Mercedes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edward Mercedes\\OneDrive - The Ksquare Group\\Documents\\Learning\\CXPApp\\CXPApp\\obj\\",
+      "projectPath": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\CXPApp.csproj",
+      "packagesPath": "C:\\Users\\josue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\josue\\source\\repos\\CXPApp\\CXPApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Edward Mercedes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2934,6 +2978,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2975,6 +3020,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.0-preview.5.23280.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           }
         },
         "imports": [
@@ -2996,7 +3045,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
