@@ -14,7 +14,7 @@
 
             <div class="col-6 mb-3">
                 <label for="Provider" class="form-label">Proveedor</label>
-                <select name="Provider" class="form-select form-select-sm" aria-label=".form-select-sm example" id="provider" asp-items="@ViewBag.Provider">
+                <select name="Provider" asp-for="Provider" class="form-select form-select-sm" aria-label=".form-select-sm example" id="provider" asp-items="@ViewBag.Provider">
                     <option value="">Proveedor</option>
                 </select>
             </div>
@@ -24,7 +24,9 @@
 
             <div class="col-6 mb-3">
                 <label for="InvoiceNumber" class="form-label">No. Factura</label>
-                <input asp-for="InvoiceNumber" name="InvoiceNumber" type="text" class="form-control" id="invoiceNumber">
+                <select name="InvoiceNumber" asp-for="InvoiceNumber" class="form-select form-select-sm" aria-label=".form-select-sm example" id="invoiceNumber" asp-items="@ViewBag.PaymentConcept">
+                    <option value="">No. Factura</option>
+                </select>
             </div>
 
             <div class="col-6 mb-3">

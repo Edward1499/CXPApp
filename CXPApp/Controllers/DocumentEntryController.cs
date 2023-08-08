@@ -92,7 +92,7 @@ namespace CXPApp.Controllers
 
         private void FillDropdownLists()
         {
-            ViewBag.Provider = new SelectList(dbContext.Providers.OrderByDescending(x => x.Id).ToList(), "Id", "Name");
+            ViewBag.Provider = new SelectList(dbContext.Providers.OrderByDescending(x => x.Id).ToList(), "Name", "Name");
             ViewBag.PaymentConcept = new SelectList(dbContext.PaymentConcepts.OrderByDescending(x => x.Id).ToList(), "Description", "Description");
         }
 
