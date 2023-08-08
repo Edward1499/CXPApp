@@ -6,7 +6,18 @@
 <div class="container">
     <div class="d-flex justify-content-between mb-3">
         <h2>Proveedores</h2>
-        <a id="add" class="btn btn-primary" asp-controller="Provider" asp-action="Add">Agregar</a>
+        
+
+        <!-- Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 12 A LA 13-->
+        <div>
+            <a id="add" class="btn btn-primary" asp-controller="Provider" asp-action="Add">Agregar</a>
+            <a id="searchButton" class="btn btn-primary" asp-controller="Provider" asp-action="Search" onclick="editSearch()">Buscar</a>
+            <input name="parametro" type="text" class="form-control" id="parametro">
+        </div>
+        
+        
+        
+
     </div>
     <table class="table table-striped">
         <thead>
@@ -46,4 +57,11 @@
             }
         </tbody>
     </table>
+    <!-- Yo del futuro, para los proximos cruds, COPIAR ESTA FUNCION (LINEA 57 A LA 61-->
+    <script>
+        function editSearch() {
+            let value = document.getElementById("parametro").value;
+            document.getElementById("searchButton").href = "/Provider/" + value;
+        }
+    </script>
 </div>

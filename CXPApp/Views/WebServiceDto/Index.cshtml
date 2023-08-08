@@ -1,0 +1,35 @@
+﻿@model List<AsientoContable>
+@{
+    ViewData["Title"] = "Asiento Contable";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Asiento Contable</h2>
+       @* <a id="add" class="btn btn-primary" asp-controller="WebServiceDto" asp-action="Add">Enviar Cont.</a>*@
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Tipo Movimiento</th>
+                <th scope="col">Fecha Registro</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Estado</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var element in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => element.descripcion)</td>
+                    <td>@Html.DisplayFor(m => element.tipoMovimiento)</td>
+                    <td>@Html.DisplayFor(m => element.fechaRegistro)</td>
+                    <td>@Html.DisplayFor(m => element.monto)</td>
+                    <td>@Html.DisplayFor(m => element.estado)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,79 @@
+﻿@{
+}
+@model DocumentEntry
+
+<div class="container-fluid">
+    <h2>Agregar Documento</h2>
+    <form asp-controller="DocumentEntry" asp-action="Add" method="post">
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="DocumentNumber" class="form-label">No. Documento</label>
+                <input name="DocumentNumber" type="text" class="form-control" id="documentNumber">
+            </div>
+
+            <div class="col-6 mb-3">
+                <label for="Provider" class="form-label">Proveedor</label>
+                <select name="Provider" class="form-select form-select-sm" aria-label=".form-select-sm example" id="provider" asp-items="@ViewBag.Provider">
+                    <option value="">Proveedor</option>
+                </select>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+
+            <div class="col-6 mb-3">
+                <label for="InvoiceNumber" class="form-label">No. Factura</label>
+                <select name="InvoiceNumber" class="form-select form-select-sm" aria-label=".form-select-sm example" id="invoiceNumber" asp-items="@ViewBag.PaymentConcept">
+                    <option value="">No. Factura</option>
+                </select>
+            </div>
+
+            
+            <div class="col-6 mb-3">
+                <label for="amount" class="form-label">Monto</label>
+                <input min="0" name="amount" type="number" class="form-control" id="amount">
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label asp-for="DocumentDay" class="control-label">Fecha Documento</label>
+                <input asp-for="DocumentDay" class="form-control" />
+                <span asp-validation-for="DocumentDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistrationDate" class="control-label">Fecha Registro</label>
+                <input asp-for="RegistrationDate" class="form-control" />
+                <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="IsActive" class="form-label">Estado</label>
+                <select name="IsActive" class="form-select form-select-sm" aria-label=".form-select-sm example" id="isActive">
+                    <option value="Activo">Pendiente</option>
+                    <option value="Inactivo">Pagado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+
+        <script>
+            var error = '@TempData["err"]';
+            if (error) {
+                alert(error);
+            }
+        </script>
+
+    </form>
+</div>
